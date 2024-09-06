@@ -2,9 +2,9 @@
 由于宝塔官方的历史版本下载链接失效，故收集了一波历史版本以供使用,可通过降级到历史版本绕过强制绑定手机号以及免费使用专业版插件
 
 # 版本说明
-* 7.4.2版本有pma漏洞
-* 7.4.5之后的版本（不包括7.4.5）需要强制绑定手机号
-* 7.2.0之前的版本不推荐使用，因为代码改动过大，降级后无法正常使用
+
+
+
 
 # 使用方法
 [宝塔回退7.4.5之前版本教程](https://blog.csdn.net/saygoodbyeyo/article/details/132534437)
@@ -21,7 +21,7 @@
 ### 降级版本
 实用cmd命令行工具执行下面命令
 ```
-wget https://raw.githubusercontent.com/luoyuu77/BaotaPanel/main/win/panel/data/setup_7.2.0.py -O C:/update.py && "C:\Program Files\python\python.exe" C:/update.py update_panel 7.2.0
+wget https://raw.githubusercontent.com/luoyuu77/BaotaPanel/main/win/panel/data/setup.py -O C:/update.py && "C:\Program Files\python\python.exe" C:/update.py update_panel 7.2.0
 ```
 最后重启一下面板
 
