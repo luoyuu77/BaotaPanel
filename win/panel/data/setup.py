@@ -885,7 +885,7 @@ def download_panel(file_list = []):
         writeFile('{}/data/net'.format(setupPath),net_v)
 
         local_path = '{}/script/BtTools.exe'.format(panelPath)
-        downloadFileByWget('{}/win/panel/BtTools{}.exe'.format(url,net_v),local_path)
+        # downloadFileByWget('{}/win/panel/BtTools{}.exe'.format(url,net_v),local_path)
         if os.path.getsize(local_path) > 128:
             return True
         return False
