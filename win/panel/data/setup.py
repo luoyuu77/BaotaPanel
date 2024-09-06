@@ -265,7 +265,7 @@ def GetLocalIp():
         ipaddress = readFile(filename)
         if not ipaddress:
 
-            url =  'http://www.bt.cn/api/getIpAddress';
+            url =  'https://www.bt.cn/Api/getIpAddress';
             str = httpGet(url)
             writeFile(filename,ipaddress)
 
@@ -485,7 +485,7 @@ def get_url(timeout = 0.5):
     import json
     try:
         #
-        node_list = [{"protocol":"http://","address":"dg2.bt.cn","port":"80","ping":500},{"protocol":"http://","address":"dg1.bt.cn","port":"80","ping":500},{"protocol":"http://","address":"download.bt.cn","port":"80","ping":500},{"protocol":"http://","address":"hk1-node.bt.cn","port":"80","ping":500},{"protocol":"http://","address":"na1-node.bt.cn","port":"80","ping":500},{"protocol":"http://","address":"jp1-node.bt.cn","port":"80","ping":500}]
+        node_list = [{"protocol":"http://","address":"dg2.bt.cn","port":"80","ping":500},{"protocol":"http://","address":"dg1.bt.cn","port":"80","ping":500},{"protocol":"http://","address":"180.101.160.68","port":"5880","ping":500},{"protocol":"http://","address":"123.129.198.197","port":"5880","ping":500},{"protocol":"http://","address":"103.224.251.67","port":"80","ping":500},{"protocol":"http://","address":"36.133.1.8","port":"5880","ping":500},{"protocol":"http://","address":"45.76.53.20","port":"80","ping":500},{"protocol":"http://","address":"113.107.111.78","port":"5880","ping":500},{"protocol":"http://","address":"45.32.116.160","port":"80","ping":500},{"protocol":"http://","address":"128.1.164.196","port":"80","ping":500}]
 
         mnode1 = []
         mnode2 = []
@@ -510,7 +510,7 @@ def get_url(timeout = 0.5):
         else: #终选中等延迟，中等带宽
             mnode = sorted(mnode2,key= lambda  x:x['ping'],reverse=False)
 
-        if not mnode: return 'https://download.bt.cn'
+        if not mnode: return 'http://download.bt.cn'
         #return mnode[0]['protocol'] + mnode[0]['address'] + ':' + mnode[0]['port']
         return "https://" + mnode[0]['address']
     except:
@@ -884,19 +884,6 @@ def download_panel(file_list = []):
         if s_ver.find('2008') >= 0: net_v = '20'
         writeFile('{}/data/net'.format(setupPath),net_v)
 
-        not_workorder_path = '{}/data/not_workorder.pl'.format(panelPath)
-        if not os.path.exists(not_workorder_path):
-            writeFile(not_workorder_path,'True')
-        bind_path = '{}/data/bind_path.pl'.format(panelPath)
-        if os.path.exists(bind_path):
-            os.remove(bind_path)
-        
-        local_path = '{}/temp/api.py'.format(setupPath)
-        downloadFileByWget('{}/win/panel/data/api.py'.format(url),local_path)
-        if os.path.exists(local_path):
-            os.remove('C:/Program Files/python/Lib/site-packages/requests/api.py')
-            shutil.move(local_path,'C:/Program Files/python/Lib/site-packages/requests')
-
         local_path = '{}/script/BtTools.exe'.format(panelPath)
         downloadFileByWget('{}/win/panel/BtTools{}.exe'.format(url,net_v),local_path)
         if os.path.getsize(local_path) > 128:
@@ -1019,7 +1006,7 @@ def get_error_log():
         data['os'] = 'Windows'
         data['error'] = error
         data['version'] = ''
-        httpPost('http://api.bt.sy/api/wpanel/PanelBug',data)
+        httpPost('https://www.bt.cn/api/wpanel/PanelBug',data)
     except :
         pass
     return error
