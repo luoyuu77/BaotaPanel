@@ -32,7 +32,7 @@ class panel_update:
 
         httpUrl = public.get_url()
         try:            
-            if not httpUrl: httpUrl = 'http://download.bt.cn'
+            if not httpUrl: httpUrl = 'https://raw.githubusercontent.com/luoyuu77/BaotaPanel/main'
             downUrl =  httpUrl + '/win/panel/panel_' + version + '.zip';
             if os.path.exists(loacl_path): os.remove(loacl_path)     
             

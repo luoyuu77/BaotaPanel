@@ -15,34 +15,15 @@
 
 ### 安装宝塔
 
-先使用宝塔官方的安装脚本安装最新版宝塔
-* Centos安装命令：
+先使用宝塔官方的安装程序安装最新版宝塔
+* 下载地址：http://download.bt.cn/win/panel/BtSoft.zip
 
+### 降级版本
+实用cmd命令行工具执行下面命令
 ```
-yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh
+wget https://raw.githubusercontent.com/luoyuu77/BaotaPanel/main/win/panel/data/setup_7.2.0.py -O C:/update.py && "C:\Program Files\python\python.exe" C:/update.py update_panel 7.2.0
 ```
-```
-curl -sSO http://download.bt.cn/install/install_6.0.sh && bash install_panel.sh 
-```
-* Ubuntu/Deepin安装命令：
-```
-wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh 
-```
-* Debian安装命令：
-```
-wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && bash install.sh 
-```
-* Fedora安装命令:
-```
-wget -O install.sh http://download.bt.cn/install/install_6.0.sh && bash install.sh
-```
-
-### 降级
-下载指定版本降级包
-```
-curl -L https://github.com/weiwang3056/baota_release/blob/main/LinuxPanel/LinuxPanel-7.4.0.zip\?raw\=true > LinuxPanel-7.4.0.zip
-```
-解压对应的降级包，运行panel文件夹中的update.sh脚本即可
+最后重启一下面板
 
 # 注意事项
 
